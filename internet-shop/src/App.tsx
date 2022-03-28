@@ -1,27 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AppContainer from './core/components/appContainer/AppContainer';
+import Main from './pages/main/Main';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit
-          {' '}
-          <code>src/App.tsx</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+// eslint-disable-next-line react/function-component-definition
+const App: React.FC = () => (
+  <AppContainer>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </BrowserRouter>
+  </AppContainer>
+);
 export default App;
