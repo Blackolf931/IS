@@ -6,8 +6,9 @@ import { rootReducer } from './reducer/rootReducer';
 
 const middleware = [thunk];
 
-// eslint-disable-next-line import/prefer-default-export
-export const store = createStore(
+const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(...middleware)),
 );
+
+export default store;

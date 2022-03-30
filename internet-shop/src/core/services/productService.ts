@@ -1,6 +1,6 @@
 import { ProductState } from '../redux/types/products/productType';
 import axiosInstance from '../../config/axios';
-import { PRODUCT_URL } from '../constants/urlConstants';
+import PRODUCT_URL from '../constants/urlConstants';
 
 class ProductService {
   public static async GetAll(): Promise<ProductState[]> {
