@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Grid } from '@mui/material';
 import { useDispatch } from 'react-redux';
-// import ProductsItemContainer from './styled/ProductsItemContainer';
 import ProductsContainer from './styled/ProductsContainer';
 import ProductItem from './productItem/ProductItem';
 import { getProducts } from '../../core/redux/thunk/getProducts';
@@ -17,7 +16,7 @@ const Products: React.FC = () => {
   useEffect(() => {
     dispatch(getProducts());
   }, []);
-  console.log(products);
+
   return (
 
     <Grid item>

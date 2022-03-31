@@ -1,17 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Typography } from '@mui/material';
 import ProductItemContainer from './styled/ProductItemContainer';
 import ProductHeaderContainer from './styled/ProductHeaderContainer';
-import ProductDescriptionContainer from './styled/ProductdescriptionContainer';
+import ProductDescriptionContainer from './styled/ProductDescriptionContainer';
 import { ProductState } from '../../../core/redux/types/products/productType';
 import defaultImage from '../../../static/defaultImages/ImageNotFound.png';
-
-const Test = styled('div')`
-  display: flex;
-  justify-content: left;
-  
-`;
+import { ProductDetails } from './styled/ColumContainer';
 
 interface Props {
   product: ProductState;
@@ -25,16 +19,12 @@ const ProductItem: React.FC<Props> = ({ product }) => {
   return (
     <ProductItemContainer>
       <ProductHeaderContainer>{product.name}</ProductHeaderContainer>
-
-      {/* eslint-disable-next-line react/style-prop-object */}
-      <Test>
-
+      <ProductDetails>
         <img src={defaultImage} alt="defaultImage" />
         <ProductDescriptionContainer>
           <Typography>{product.shortDescription}</Typography>
         </ProductDescriptionContainer>
-      </Test>
-
+      </ProductDetails>
     </ProductItemContainer>
   );
 };
