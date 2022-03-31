@@ -8,6 +8,7 @@ const ProductItemContainer = styled.div`
   cursor: pointer;
   flex: 0 0 25%;
   opacity: 1;
+  max-width: 700px;
   &:hover {
     background-color: #c5bebe;
   }
