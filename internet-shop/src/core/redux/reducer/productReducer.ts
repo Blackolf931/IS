@@ -3,20 +3,17 @@ import { ProductAction, ProductActionTypes, ProductState } from '../types/produc
 export interface InitProductState {
   products: ProductState[],
   isLoading: boolean;
-  error: string;
 }
 
 const initialState: InitProductState = {
   products: [],
   isLoading: false,
-  error: '',
 };
 
-const productReducer = (
-  action: ProductAction,
+export const productReducer = (
   state = initialState,
+  action: ProductAction,
 ) : InitProductState => {
-  console.log(action);
   switch (action.type) {
     case ProductActionTypes.GET_ALL:
       return {
@@ -33,4 +30,3 @@ const productReducer = (
       return state;
   }
 };
-export default productReducer;

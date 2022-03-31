@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// eslint-disable-next-line import/no-named-as-default
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import App from './App';
-// import store from './core/redux/store';
+import store from './core/redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
-    <App />
-    {/* </Provider> */}
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
