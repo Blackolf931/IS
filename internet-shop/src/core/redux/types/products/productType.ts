@@ -10,6 +10,7 @@ export interface ProductState {
   quantityInStock: number,
   categoryId: number,
   providerCountryId: null,
+  shortDescription: string,
 }
 
 interface ProductGetAllAction {

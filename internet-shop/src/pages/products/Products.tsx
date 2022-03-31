@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Grid } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import ProductsItemContainer from './styled/ProductsItemContainer';
+// import ProductsItemContainer from './styled/ProductsItemContainer';
 import ProductsContainer from './styled/ProductsContainer';
 import ProductItem from './productItem/ProductItem';
 import { getProducts } from '../../core/redux/thunk/getProducts';
@@ -17,18 +17,16 @@ const Products: React.FC = () => {
   useEffect(() => {
     dispatch(getProducts());
   }, []);
-
+  console.log(products);
   return (
-    <Grid>
-      <Grid item>
-        <ProductsContainer>
-          <ProductsItemContainer>
-            {(products.length !== 0)
+
+    <Grid item>
+      <ProductsContainer>
+        {(products.length !== 0)
                 && products.map((item) => <ProductItem key={item.productId} product={item} />)}
-          </ProductsItemContainer>
-        </ProductsContainer>
-      </Grid>
+      </ProductsContainer>
     </Grid>
+
   );
 };
 
