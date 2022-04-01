@@ -7,7 +7,6 @@ const ProductDescriptionContainer = styled.div`
   justify-content: space-between;
   //display: block;
   word-wrap: break-word;
-  
 `;
 
 export default ProductDescriptionContainer;

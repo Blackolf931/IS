@@ -5,7 +5,6 @@ import MainRoutes from './core/constants/mainRoutes';
 import Header from './core/components/header/Header';
 import Products from './pages/products/Products';
 
-// eslint-disable-next-line react/function-component-definition
 const App: React.FC = () => (
   <AppContainer>
     <Header />
