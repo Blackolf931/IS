@@ -23,7 +23,8 @@
   "plugins": [
     "react",
     "@typescript-eslint",
-    "prettier"
+    "prettier",
+    "react-hooks"
   ],
   "rules": {
     "prettier/prettier": "error",
@@ -34,6 +35,11 @@
     "@typescript-eslint/no-use-before-define" : [
       "error"
     ],
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "default-param-last": "off",
+    "react/destructuring-assignment": "off",
     "react/jsx-filename-extension": [
       "warn",
       {

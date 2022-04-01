@@ -7,7 +7,6 @@ import { getProducts } from '../../core/redux/thunk/getProducts';
 import useTypedSelector from '../../core/hooks/useTypeSelector';
 import productSelector from '../../core/redux/selectors/productSelector';
 
-// eslint-disable-next-line react/function-component-definition
 const Products: React.FC = () => {
   const { products } = useTypedSelector(productSelector);
 
@@ -18,14 +17,12 @@ const Products: React.FC = () => {
   }, []);
 
   return (
-
     <Grid item>
       <ProductsContainer>
-        {(products.length !== 0)
-                && products.map((item) => <ProductItem key={item.productId} product={item} />)}
+        {products.length !== 0 &&
+          products.map((item) => <ProductItem key={item.productId} product={item} />)}
       </ProductsContainer>
     </Grid>
-
   );
 };
 
