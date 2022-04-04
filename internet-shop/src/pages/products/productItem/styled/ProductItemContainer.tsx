@@ -5,6 +5,7 @@ const ProductItemContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
   margin: 10px auto;
+  display: flex;
 
   border: 1px solid #e7e7e7;
 

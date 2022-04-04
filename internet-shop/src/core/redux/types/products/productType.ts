@@ -4,9 +4,9 @@ export enum ProductActionTypes {
 }
 
 export interface ProductState {
-  productId: string,
-  name: string,
-  shortDescription: string,
+  productId: string;
+  name: string;
+  shortDescription: string;
 }
 
 interface ProductGetAllAction {
@@ -15,7 +15,7 @@ interface ProductGetAllAction {
 
 interface ProductGetAllSuccessAction {
   type: ProductActionTypes.GET_ALL_SUCCESS;
-  payload: ProductState[]
+  payload: ProductState[];
 }
 
 export type ProductAction = ProductGetAllAction | ProductGetAllSuccessAction;
