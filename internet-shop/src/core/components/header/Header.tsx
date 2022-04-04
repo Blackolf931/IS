@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import AppBar from '@mui/material/AppBar';
 import SearchContainer from './styled/SearchContainer';
 import SearchIconWrapperContainer from './styled/SearchIconWrapperContainer';
 import InputContainer from './styled/InputContainer';
@@ -22,7 +22,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <AppBar position="static">
         <Toolbar>
           <IconButtonContainer aria-label="open drawer" onClick={setIsOpenFilterMenu}>

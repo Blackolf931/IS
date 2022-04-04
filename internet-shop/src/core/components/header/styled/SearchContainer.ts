@@ -1,4 +1,5 @@
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
+import { alpha } from '@mui/material';
 
 const Container = styled('div')(({ theme }) => ({
   position: 'relative',
