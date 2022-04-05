@@ -3,16 +3,11 @@ import { Button, Typography } from '@mui/material';
 import ProductItemContainer from './styled/ProductItemContainer';
 import ProductHeaderContainer from './styled/ProductHeaderContainer';
 import { ProductState } from '../../../core/redux/types/products/productType';
-/* import defaultImage from '../../../static/defaultImages/ImageNotFound.png'; */
-// import { ProductDetails } from './styled/ColumContainer';
-// import { ShoppingCartContainer } from './styled/ShoppingCatrContainer';
 import { ButtonsContainers } from './styled/ButtonsContainers';
 import { FavoriteOutlinedIconContainers } from './styled/FavoriteOutlinedIconContainer';
 import { FavoriteBorderOutlinedIconContainers } from './styled/FavoriteBorderOutlinedIconContainer';
 import ProductDescriptionContainer from './styled/ProductDescriptionContainer';
 import { ImageContainer } from './styled/ImageContainer';
-
-// import { ButtonAddToCardContainer } from '../../../core/components/buttonAddToCart/ButtonAddToCardContainer';
 
 interface Props {
   product: ProductState;
