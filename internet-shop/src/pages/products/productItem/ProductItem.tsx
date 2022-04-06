@@ -8,6 +8,10 @@ import { FavoriteOutlinedIconContainers } from './styled/FavoriteOutlinedIconCon
 import { FavoriteBorderOutlinedIconContainers } from './styled/FavoriteBorderOutlinedIconContainer';
 import ProductDescriptionContainer from './styled/ProductDescriptionContainer';
 import { ImageContainer } from './styled/ImageContainer';
+import { PriceContainer } from './styled/PriceContainer';
+import { PriceWithDiscount } from '../../../core/components/price/PriceWithDiscount';
+import { ProductFooter } from './styled/ProductFooter';
+import { TypographyContainer } from './styled/TypographyContainer';
 
 interface Props {
   product: ProductState;
@@ -31,18 +35,29 @@ const ProductItem: React.FC<Props> = ({ product }) => {
         alt="defaultImage"
       />
       <ProductDescriptionContainer>
-        <div>
-          <ProductHeaderContainer>{product.name}</ProductHeaderContainer>
-          <Typography>{product.shortDescription}</Typography>
-        </div>
-        <ButtonsContainers>
-          <Button style={{ textTransform: 'none' }}>Add to cart</Button>
-          {productInFavorite ? (
-            <FavoriteOutlinedIconContainers onClick={setProductFavorite} />
-          ) : (
-            <FavoriteBorderOutlinedIconContainers onClick={setProductFavorite} />
-          )}
-        </ButtonsContainers>
+        <ProductHeaderContainer> {product.name} </ProductHeaderContainer>
+        <Typography>{product.shortDescription}</Typography>
+        <ProductFooter>
+          <PriceContainer>
+            <TypographyContainer>Price</TypographyContainer>
+            {product.discount > 0 ? (
+              <PriceWithDiscount
+                price={product.price}
+                priceWithDiscount={product.priceWithDiscount}
+              />
+            ) : (
+              <TypographyContainer variant="h5">{product.price}</TypographyContainer>
+            )}
+          </PriceContainer>
+          <ButtonsContainers>
+            <Button style={{ textTransform: 'none' }}>Add to cart</Button>
+            {productInFavorite ? (
+              <FavoriteOutlinedIconContainers onClick={setProductFavorite} />
+            ) : (
+              <FavoriteBorderOutlinedIconContainers onClick={setProductFavorite} />
+            )}
+          </ButtonsContainers>
+        </ProductFooter>
       </ProductDescriptionContainer>
     </ProductItemContainer>
   );

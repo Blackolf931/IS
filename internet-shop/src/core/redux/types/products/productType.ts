@@ -7,6 +7,9 @@ export interface ProductState {
   productId: string;
   name: string;
   shortDescription: string;
+  discount: number;
+  price: number;
+  priceWithDiscount: number;
 }
 
 interface ProductGetAllAction {
