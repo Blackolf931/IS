@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Grid } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import ProductsContainer from './styled/ProductsContainer';
 import ProductItem from './productItem/ProductItem';
@@ -14,15 +13,13 @@ const Products: React.FC = () => {
 
   useEffect(() => {
     dispatch(getProducts());
-  }, []);
+  }, [dispatch]);
 
   return (
-    <Grid item>
-      <ProductsContainer>
-        {products.length !== 0 &&
-          products.map((item) => <ProductItem key={item.productId} product={item} />)}
-      </ProductsContainer>
-    </Grid>
+    <ProductsContainer>
+      {products.length !== 0 &&
+        products.map((item) => <ProductItem key={item.productId} product={item} />)}
+    </ProductsContainer>
   );
 };
 

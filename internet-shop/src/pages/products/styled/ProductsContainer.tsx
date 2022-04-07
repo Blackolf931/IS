@@ -1,9 +1,15 @@
 import styled from 'styled-components';
+import device from '../../../device';
 
 const ProductsContainer = styled.div`
-  width: 100%;
-  max-width: 1170px;
-  margin: auto;
+  display: contents;
+  @media ${device.laptop} {
+    max-width: 800px;
+  }
+
+  @media ${device.desktop} {
+    max-width: 1400px;
+  }
 `;
 
 export default ProductsContainer;

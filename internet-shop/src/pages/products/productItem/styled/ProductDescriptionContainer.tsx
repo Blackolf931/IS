@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 const ProductDescriptionContainer = styled.div`
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: space-between;
-  //display: block;
-  word-wrap: break-word;
+  width: 100%;
 `;
 
 export default ProductDescriptionContainer;

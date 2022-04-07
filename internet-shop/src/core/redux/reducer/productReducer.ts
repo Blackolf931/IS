@@ -1,7 +1,7 @@
 import { ProductAction, ProductActionTypes, ProductState } from '../types/products/productType';
 
 export interface InitProductState {
-  products: ProductState[],
+  products: ProductState[];
   isLoading: boolean;
 }
 
@@ -10,10 +10,7 @@ const initialState: InitProductState = {
   isLoading: false,
 };
 
-export const productReducer = (
-  state = initialState,
-  action: ProductAction,
-) : InitProductState => {
+export const productReducer = (state = initialState, action: ProductAction): InitProductState => {
   switch (action.type) {
     case ProductActionTypes.GET_ALL:
       return {
