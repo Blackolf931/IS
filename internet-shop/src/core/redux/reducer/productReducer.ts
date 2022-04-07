@@ -2,11 +2,13 @@ import { ProductAction, ProductActionTypes, ProductState } from '../types/produc
 
 export interface InitProductState {
   products: ProductState[];
+  product: ProductState | null;
   isLoading: boolean;
 }
 
 const initialState: InitProductState = {
   products: [],
+  product: null,
   isLoading: false,
 };
 
@@ -22,6 +24,12 @@ export const productReducer = (state = initialState, action: ProductAction): Ini
         ...state,
         isLoading: false,
         products: action.payload,
+      };
+    case ProductActionTypes.GET_BY_ID:
+      return {
+        ...state,
+        isLoading: false,
+        product: action.payload,
       };
     default:
       return state;
