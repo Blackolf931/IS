@@ -19,7 +19,7 @@ export const getProducts =
   };
 
 export const getProductById =
-  (id: number) =>
+  (id: string | undefined) =>
   async (dispatch: Dispatch<ProductAction>): Promise<void> => {
     try {
       const product = await ProductService.GetById(id);

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import ProductItemContainer from './styled/ProductItemContainer';
 import ProductHeaderContainer from './styled/ProductHeaderContainer';
 import { ProductState } from '../../../core/redux/types/products/productType';
@@ -12,6 +13,7 @@ import { PriceContainer } from './styled/PriceContainer';
 import { PriceWithDiscount } from '../../../core/components/price/PriceWithDiscount';
 import { ProductFooter } from './styled/ProductFooter';
 import { TypographyContainer } from './styled/TypographyContainer';
+import MainRoutes from '../../../core/constants/mainRoutes';
 
 interface Props {
   product: ProductState;
@@ -19,6 +21,11 @@ interface Props {
 
 const ProductItem: React.FC<Props> = ({ product }) => {
   const [productInFavorite, setProductInFavorite] = useState(false);
+  const navigate = useNavigate();
+  const routeChange = (id: number) => () => {
+    const path = `/${MainRoutes.product}/${id}`;
+    navigate(path);
+  };
 
   const setProductFavorite = () => {
     if (productInFavorite) {
@@ -35,7 +42,9 @@ const ProductItem: React.FC<Props> = ({ product }) => {
         alt="defaultImage"
       />
       <ProductDescriptionContainer>
-        <ProductHeaderContainer> {product.name} </ProductHeaderContainer>
+        <ProductHeaderContainer onClick={routeChange(product.id)}>
+          {product.name}
+        </ProductHeaderContainer>
         <Typography>{product.shortDescription}</Typography>
         <ProductFooter>
           <PriceContainer>

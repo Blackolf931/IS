@@ -5,12 +5,14 @@ export enum ProductActionTypes {
 }
 
 export interface ProductState {
-  productId: string;
+  id: number;
   name: string;
   shortDescription: string;
   discount: number;
   price: number;
   priceWithDiscount: number;
+  quantityInStock: number;
+  description: string;
 }
 
 interface ProductGetAllAction {

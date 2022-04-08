@@ -1,14 +1,15 @@
 import { ProductAction, ProductActionTypes, ProductState } from '../types/products/productType';
+import { defaultProduct } from '../../interfaces/ProductDefault';
 
 export interface InitProductState {
   products: ProductState[];
-  product: ProductState | null;
+  product: ProductState;
   isLoading: boolean;
 }
 
 const initialState: InitProductState = {
   products: [],
-  product: null,
+  product: defaultProduct,
   isLoading: false,
 };
 

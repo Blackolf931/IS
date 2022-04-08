@@ -4,6 +4,7 @@ import AppContainer from './core/components/appContainer/AppContainer';
 import MainRoutes from './core/constants/mainRoutes';
 import Header from './core/components/header/Header';
 import Products from './pages/products/Products';
+import { ProductDescription } from './pages/products/productDescription/ProductDescription';
 
 const App: React.FC = () => (
   <AppContainer>
@@ -11,6 +12,7 @@ const App: React.FC = () => (
     <BrowserRouter>
       <Routes>
         <Route path={MainRoutes.main} element={<Products />} />
+        <Route path={`${MainRoutes.product}/:id`} element={<ProductDescription />} />
         <Route path={MainRoutes.login} element={<div>Login</div>} />
         <Route path={MainRoutes.registration} element={<div>Registration</div>} />
       </Routes>

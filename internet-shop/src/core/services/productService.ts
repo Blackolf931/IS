@@ -12,7 +12,7 @@ export class ProductService {
     return result || [];
   }
 
-  public static async GetById(id: number): Promise<ProductState> {
+  public static async GetById(id: string | undefined): Promise<ProductState> {
     const result = await axiosInstance
       .get<ProductState>(`${PRODUCT_URL}/${id}`)
       .then(({ data }) => data)
