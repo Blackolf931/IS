@@ -1,7 +1,7 @@
 import React from 'react';
 import { PriceContainers } from './styled/PriceContainer';
 import { PriceWithDiscountContainer } from './styled/PriceWithDiscountContainer';
-import { EmptyContainer } from './styled/EmptyContainer';
+import { EmptyContainer } from '../emptyContainer/EmptyContainer';
 
 interface Props {
   price: number;

@@ -5,9 +5,9 @@ export const ProductGeneralContainer = styled.div`
   padding-top: 1%;
   justify-content: space-around;
   flex-direction: column;
-  margin: auto;
+  /*  margin: auto;*/
   display: flex;
-  max-height: 1100px;
+  flex: 0 0 25%;
 
   @media ${device.laptop} {
     max-width: 800px;
