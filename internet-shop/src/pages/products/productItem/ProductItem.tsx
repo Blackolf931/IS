@@ -59,6 +59,8 @@ const ProductItem: React.FC<Props> = ({ product }) => {
               <PriceWithDiscount
                 price={product.price}
                 priceWithDiscount={product.priceWithDiscount}
+                discount={product.discount}
+                currency="BYN"
               />
             ) : (
               <TypographyContainer variant="h5">{product.price}</TypographyContainer>

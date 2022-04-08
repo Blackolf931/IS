@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { Typography } from '@mui/material';
 
-export const PriceWithDiscountContainer = styled(Typography)`
-  color: red;
-  padding-left: 30%;
+export const PriceWithDiscountContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
 `;
