@@ -5,11 +5,13 @@ import SearchIcon from '@mui/icons-material/Search';
 import AppBar from '@mui/material/AppBar';
 import { Badge, IconButton } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useNavigate } from 'react-router-dom';
 import SearchContainer from './styled/SearchContainer';
 import SearchIconWrapperContainer from './styled/SearchIconWrapperContainer';
 import InputContainer from './styled/InputContainer';
 import IconButtonContainer from './styled/IconButtonContainer';
 import TypographyContainer from './styled/TypographyContainer';
+import MainRoutes from '../../constants/mainRoutes';
 
 interface Props {
   productsInBasketCount: number;
@@ -26,6 +28,12 @@ const Header: React.FC<Props> = ({ productsInBasketCount }) => {
     }
   };
 
+  const navigate = useNavigate();
+  const routeChange = () => () => {
+    const path = `${MainRoutes.basket}`;
+    navigate(path);
+  };
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -36,7 +44,7 @@ const Header: React.FC<Props> = ({ productsInBasketCount }) => {
         <TypographyContainer>MUI</TypographyContainer>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={productsInBasketCount} color="error">
-            <ShoppingCartIcon />
+            <ShoppingCartIcon onClick={routeChange()} />
           </Badge>
         </IconButton>
         <SearchContainer>

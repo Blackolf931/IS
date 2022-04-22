@@ -22,7 +22,8 @@ const ProductItem: React.FC<Props> = ({ product }) => {
 
   const addToBasket = () => {
     const items = JSON.parse(localStorage.getItem('basket') || '[]');
-    localStorage.setItem('basket', JSON.stringify([...items, { count: 1, productId: product.id }]));
+    // localStorage.setItem('basket', JSON.stringify([...items, { count: 1, productId: product.id }]));
+    localStorage.setItem('basket', JSON.stringify([...items, product]));
   };
 
   const setProductFavorite = () => {
