@@ -9,7 +9,7 @@ export interface DefaultProduct {
   priceWithDiscount: number | null;
 }
 export const defaultProduct: ProductState = {
-  productId: '',
+  id: '',
   name: '',
   shortDescription: '',
   discount: 0,

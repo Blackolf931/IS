@@ -5,7 +5,7 @@ export enum ProductActionTypes {
 }
 
 export interface ProductState {
-  productId: string;
+  id: string;
   name: string;
   shortDescription: string;
   discount: number;

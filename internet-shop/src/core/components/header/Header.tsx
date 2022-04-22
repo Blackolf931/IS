@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Box from '@mui/material/Box';
+import React, { useEffect, useState } from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
@@ -21,25 +20,31 @@ const Header: React.FC = () => {
     }
   };
 
-  return (
-    <Box>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButtonContainer aria-label="open drawer" onClick={setIsOpenFilterMenu}>
-            <MenuIcon />
-          </IconButtonContainer>
+  const [basket, setBasket] = useState([]);
 
-          <TypographyContainer>MUI</TypographyContainer>
-          <SearchContainer>
-            <SearchIconWrapperContainer>
-              <SearchIcon />
-            </SearchIconWrapperContainer>
-            <InputContainer placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
-          </SearchContainer>
-        </Toolbar>
-      </AppBar>
-      {isOpenFilter && <div>Test</div>}
-    </Box>
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('basket') || '[]');
+    if (basket) {
+      setBasket(items);
+    }
+  }, []);
+
+  return (
+    <AppBar position="static">
+      <Toolbar>
+        <IconButtonContainer aria-label="open drawer" onClick={setIsOpenFilterMenu}>
+          <MenuIcon />
+        </IconButtonContainer>
+
+        <TypographyContainer>MUI</TypographyContainer>
+        <SearchContainer>
+          <SearchIconWrapperContainer>
+            <SearchIcon />
+          </SearchIconWrapperContainer>
+          <InputContainer placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
+        </SearchContainer>
+      </Toolbar>
+    </AppBar>
   );
 };
 

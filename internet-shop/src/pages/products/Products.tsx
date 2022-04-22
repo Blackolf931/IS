@@ -18,7 +18,7 @@ const Products: React.FC = () => {
   return (
     <ProductsContainer>
       {products.length !== 0 &&
-        products.map((item) => <ProductItem key={item.productId} product={item} />)}
+        products.map((item) => <ProductItem key={item.id} product={item} />)}
     </ProductsContainer>
   );
 };
