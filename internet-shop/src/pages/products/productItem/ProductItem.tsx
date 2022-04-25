@@ -20,6 +20,11 @@ interface Props {
 const ProductItem: React.FC<Props> = ({ product }) => {
   const [productInFavorite, setProductInFavorite] = useState(false);
 
+  const addToBasket = () => {
+    const items = JSON.parse(localStorage.getItem('basket') || '[]');
+    localStorage.setItem('basket', JSON.stringify([...items, { count: 1, productId: product.id }]));
+  };
+
   const setProductFavorite = () => {
     if (productInFavorite) {
       setProductInFavorite(false);
@@ -50,7 +55,9 @@ const ProductItem: React.FC<Props> = ({ product }) => {
             )}
           </PriceContainer>
           <ButtonsContainers>
-            <Button style={{ textTransform: 'none' }}>Add to cart</Button>
+            <Button style={{ textTransform: 'none' }} onClick={addToBasket}>
+              Add to cart
+            </Button>
             {productInFavorite ? (
               <FavoriteOutlinedIconContainers onClick={setProductFavorite} />
             ) : (
