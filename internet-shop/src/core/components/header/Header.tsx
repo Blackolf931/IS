@@ -3,13 +3,19 @@ import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AppBar from '@mui/material/AppBar';
+import { Badge, IconButton } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchContainer from './styled/SearchContainer';
 import SearchIconWrapperContainer from './styled/SearchIconWrapperContainer';
 import InputContainer from './styled/InputContainer';
 import IconButtonContainer from './styled/IconButtonContainer';
 import TypographyContainer from './styled/TypographyContainer';
 
-const Header: React.FC = () => {
+interface Props {
+  productsInBasketCount: number;
+}
+
+const Header: React.FC<Props> = ({ productsInBasketCount }) => {
   const [isOpenFilter, setIsOpenFilter] = useState(false);
 
   const setIsOpenFilterMenu = () => {
@@ -37,6 +43,11 @@ const Header: React.FC = () => {
         </IconButtonContainer>
 
         <TypographyContainer>MUI</TypographyContainer>
+        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <Badge badgeContent={productsInBasketCount} color="error">
+            <ShoppingCartIcon />
+          </Badge>
+        </IconButton>
         <SearchContainer>
           <SearchIconWrapperContainer>
             <SearchIcon />
