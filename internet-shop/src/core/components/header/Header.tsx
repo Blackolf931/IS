@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
@@ -25,6 +25,15 @@ const Header: React.FC<Props> = ({ productsInBasketCount }) => {
       setIsOpenFilter(true);
     }
   };
+
+  const [basket, setBasket] = useState([]);
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('basket') || '[]');
+    if (basket) {
+      setBasket(items);
+    }
+  }, []);
 
   return (
     <AppBar position="static">
